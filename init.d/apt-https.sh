@@ -13,3 +13,5 @@ for source_list in "${source_lists[@]}"; do
 	[[ -f "$source_list" ]] || continue
 	sudo sed -i 's|http://|https://|g' "$source_list"
 done
+
+sudo apt update

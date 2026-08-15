@@ -31,6 +31,8 @@ AVAILABLE_TOPICS=(
 	git-config
 	nanorc
 	python-uv
+	tldr
+	xtradeb
 	oh-my-zsh
 	javascript-nodejs
 	javascript-bun
@@ -310,13 +312,15 @@ preview_topic() {
 	case "$topic" in
 		unminimize)
 			printf '%s\n' 'yes | sudo unminimize'
+			printf '%s\n' 'sudo apt install -y man-db'
 			;;
 		apt-https)
 			printf '%s\n' 'sudo apt install -y ca-certificates apt-transport-https'
 			printf '%s\n' "sudo sed -i 's|http://|https://|g' /etc/apt/sources.list /etc/apt/sources.list.d/*.list /etc/apt/sources.list.d/*.sources"
+			printf '%s\n' 'sudo apt update'
 			;;
 		packages)
-			printf '%s\n' 'sudo apt install -y man-db curl wget nano zip unzip git tree'
+			printf '%s\n' 'sudo apt install -y man-db curl wget nano zip unzip git tree gh'
 			;;
 		git-config)
 			printf '%s\n' 'sudo apt install -y git git-delta'
@@ -328,6 +332,14 @@ preview_topic() {
 		python-uv)
 			printf '%s\n' 'sudo apt install -y python3 python-is-python3 python3-pip'
 			printf '%s\n' 'python -m pip install --break-system-packages uv ruff'
+			;;
+		tldr)
+			printf '%s\n' 'sudo apt install -y python3 python3-pip'
+			printf '%s\n' 'python3 -m pip install --break-system-packages tldr'
+			;;
+		xtradeb)
+			printf '%s\n' 'sudo apt install -y software-properties-common'
+			printf '%s\n' 'sudo add-apt-repository -y ppa:xtradeb/apps'
 			;;
 		oh-my-zsh)
 			printf '%s\n' 'sudo apt install -y curl git zsh'
