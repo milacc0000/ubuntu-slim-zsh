@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # Git Configs
-sudo apt install -y git git-delta
+sudo apt install -y git git-delta git-lfs
 
 git config --global init.defaultBranch main
 git config --global pull.rebase false

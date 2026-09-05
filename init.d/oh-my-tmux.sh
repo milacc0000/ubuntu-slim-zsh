@@ -1,7 +1,7 @@
 #!/bin/env bash
 set -euo pipefail
 
-sudo apt install -y git tmux zsh
+sudo apt install -y git gnu-which tmux zsh
 
 # Setup oh-my-tmux
 chsh -s "$(which zsh)"

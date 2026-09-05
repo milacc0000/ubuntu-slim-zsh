@@ -323,7 +323,7 @@ preview_topic() {
 			printf '%s\n' 'sudo apt install -y man-db curl wget nano zip unzip git tree gh'
 			;;
 		git-config)
-			printf '%s\n' 'sudo apt install -y git git-delta'
+			printf '%s\n' 'sudo apt install -y git git-delta git-lfs'
 			printf '%s\n' 'git config --global diff.lfs.textconv cat'
 			;;
 		nanorc)
@@ -350,9 +350,10 @@ preview_topic() {
 			printf '%s\n' 'sudo apt install -y curl'
 			printf '%s\n' 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash'
 			printf '%s\n' 'nvm install 22'
+			printf '%s\n' 'yes | corepack enable pnpm'
 			;;
 		javascript-bun)
-			printf '%s\n' 'sudo apt install -y curl'
+			printf '%s\n' 'sudo apt install -y curl unzip'
 			printf '%s\n' 'curl -fsSL https://bun.sh/install | bash'
 			;;
 		steamcmd)
@@ -367,16 +368,16 @@ preview_topic() {
 			;;
 		minecraft-fabric)
 			printf '%s\n' 'prompt: Minecraft version, install directory'
-			printf '%s\n' 'sudo apt install -y openjdk-25-jdk'
+			printf '%s\n' 'sudo apt install -y curl openjdk-25-jdk'
 			printf '%s\n' 'download latest compatible Fabric server jar; write run.sh (-Xmx6G)'
 			;;
 		minecraft-neoforge)
 			printf '%s\n' 'prompt: Minecraft version, install directory'
-			printf '%s\n' 'sudo apt install -y openjdk-25-jdk'
+			printf '%s\n' 'sudo apt install -y curl openjdk-25-jdk'
 			printf '%s\n' 'install latest compatible NeoForge; set -Xmx6G; remove run.bat'
 			;;
 		oh-my-tmux)
-			printf '%s\n' 'sudo apt install -y git tmux zsh'
+			printf '%s\n' 'sudo apt install -y git gnu-which tmux zsh'
 			printf '%s\n' 'git clone --single-branch https://github.com/gpakosz/.tmux.git'
 			;;
 	esac
