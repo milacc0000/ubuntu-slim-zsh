@@ -324,6 +324,7 @@ preview_topic() {
 			;;
 		git-config)
 			printf '%s\n' 'sudo apt install -y git git-delta'
+			printf '%s\n' 'git config --global diff.lfs.textconv cat'
 			;;
 		nanorc)
 			printf '%s\n' 'sudo apt install -y curl unzip wget'
